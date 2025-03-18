@@ -23,24 +23,25 @@
     </div>
   </div>
 
-  <!-- Ana Görsel ve Yakında Hizmet Mesajı -->
-  <div class="coming-soon">
+
+
+    <!-- Ürün Listesi -->
+  <div class="product-list">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <!-- <img src="/api/placeholder/600/400" alt="Evcil Hayvan Görseli" class="main-image"> -->
-          <img src="images/11.jpeg" alt="Evcil Hayvan Görseli" class="main-image">
+        {% for product in products %}
+        <div class="col-md-4">
+          <div class="product-item">
+            <img src="{% static 'shop/img/' %}{{ product.url }}" alt="{{ product.name }}" class="product-image" style="width: 100px; height: 100px;">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p><strong>Fiyat:</strong> {{ product.price }} TL</p>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h2>Yakında Hizmetinizdeyiz!</h2>
-          <p class="lead">Minik dostlarınız için en kaliteli ürünleri sunmak üzere çok yakında hizmet vermeye
-            başlıyoruz.</p>
-          <p>Chittoshop Petshop olarak, evcil hayvanlarınızın sağlığı ve mutluluğu için en kaliteli ürünleri bir araya
-            getirdik. Hem toptan hem de perakende satışlarımızla sizlere hizmet vermeyi sabırsızlıkla bekliyoruz.</p>
-        </div>
+        {% endfor %}
       </div>
     </div>
-  </div>  
+  </div>
 
     <!-- İletişim Bilgileri -->
   <div class="contact-info">
