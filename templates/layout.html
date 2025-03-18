@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chittoshop Petshop | Toptan ve Perakende Satış</title>
+  <!-- Bootstrap 3.3.7 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  {% block css_file %}{% endblock %}
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding-top: 70px;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .jumbotron {
+      background-color: #f8f8f8;
+      margin-bottom: 0;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .jumbotron h1 {
+      font-weight: bold;
+      color: #337ab7;
+      margin-bottom: 20px;
+    }
+
+    .jumbotron p {
+      font-size: 21px;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      background-color: #337ab7;
+      color: white;
+      padding: 40px 0;
+    }
+
+    .contact-info h3 {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+    }
+
+    .contact-info p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .main-image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .coming-soon {
+      background-color: #f8f8f8;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .coming-soon h2 {
+      color: #337ab7;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+    <!-- Navbar content -->
+     {% include "partials/_nav.html" %}
+    
+    <!-- Main content -->
+    {% block content %}{% endblock %}
+    
+    
+    <!-- jQuery ve Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block js_files %}{% endblock %}
+</body>
+</html>

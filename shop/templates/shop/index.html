@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block css_files %}
+    {% comment %} <link rel="stylesheet" href="{% static 'courses/css/style.css' %}"> {% endcomment %}
+{% endblock  %}
+
+{% block page_title %}
+    anasayfa
+{% endblock %}
+
+{% block content %}
+<!-- Ana İçerik - Jumbotron -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Ürünlerimiz</h1>
+      {% comment %} <p>Toptan ve Perakende Evcil Hayvan Ürünleri Satışı</p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Ürünlerimizi Keşfedin</a>
+        <a class="btn btn-default btn-lg" href="#" role="button">Bize Ulaşın</a>
+      </p> {% endcomment %}
+    </div>
+  </div>
+
+  <!-- Ana Görsel ve Yakında Hizmet Mesajı -->
+  <div class="coming-soon">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- <img src="/api/placeholder/600/400" alt="Evcil Hayvan Görseli" class="main-image"> -->
+          <img src="images/11.jpeg" alt="Evcil Hayvan Görseli" class="main-image">
+        </div>
+        <div class="col-md-6">
+          <h2>Yakında Hizmetinizdeyiz!</h2>
+          <p class="lead">Minik dostlarınız için en kaliteli ürünleri sunmak üzere çok yakında hizmet vermeye
+            başlıyoruz.</p>
+          <p>Chittoshop Petshop olarak, evcil hayvanlarınızın sağlığı ve mutluluğu için en kaliteli ürünleri bir araya
+            getirdik. Hem toptan hem de perakende satışlarımızla sizlere hizmet vermeyi sabırsızlıkla bekliyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+    <!-- İletişim Bilgileri -->
+  <div class="contact-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Adreslerimiz</h3>
+          <p><i class="glyphicon glyphicon-map-marker"></i> Merkez Şube: Arapzade mahallesi Santral yolu caddesi numara
+            26 / A <br> Orhangazi Bursa</p>
+          <p><i class="glyphicon glyphicon-map-marker"></i> Şube: Kükürtlü mahallesi Emir Abdülkadir caddesi no
+            9/3 <br> Osmangazi Bursa</p>
+        </div>
+        <div class="col-md-6">
+          <h3>İletişim Bilgileri</h3>
+          <p><i class="glyphicon glyphicon-phone"></i> Telefon 1: +90 (533) 273 83 40</p>
+          <p><i class="glyphicon glyphicon-phone"></i> Telefon 2: +90 (542) 774 19 89</p>
+          <p><i class="glyphicon glyphicon-envelope"></i> E-posta: info@chittoshop.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Chittoshop Petshop. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+
+{% endblock %}
+
+{% block js_files %}
+    {% comment %} <script src="{% static 'courses/js/script.js' %}"></script> {% endcomment %}
+{% endblock  %}
