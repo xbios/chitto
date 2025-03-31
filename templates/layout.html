@@ -22,8 +22,9 @@
     .jumbotron {
       background-color: #f8f8f8;
       margin-bottom: 0;
-      padding: 60px 0;
+      padding: 25px 0;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     .jumbotron h1 {
@@ -81,6 +82,60 @@
       padding: 20px 0;
       text-align: center;
     }
+    
+    {% comment %} shop {% endcomment %}
+    .row {
+            margin-bottom: 10px; /* Satır arası boşluk */
+        }
+        .product-card {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 10px;
+            min-height: 100%; 
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+            flex-grow: 1; /* Açıklamayı esnek hale getir */
+        }
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        .btn-cart {
+            background-color: #ff5733;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto; /* Butonu aşağıya sabitle */
+        }
+        .btn-cart:hover {
+            background-color: #e64c2e;
+        }
   </style>
 </head>
 

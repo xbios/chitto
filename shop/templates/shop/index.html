@@ -12,7 +12,7 @@
 
 {% block content %}
 <!-- Ana İçerik - Jumbotron -->
-  <div class="jumbotron">
+  <div class="jumbotron" >
     <div class="container">
       <h1>Ürünlerimiz</h1>
       {% comment %} <p>Toptan ve Perakende Evcil Hayvan Ürünleri Satışı</p>
@@ -30,14 +30,16 @@
     <div class="container">
       <div class="row">
         {% for product in products %}
-        <div class="col-md-4">
-          <div class="product-item">
-            <img src="{% static 'shop/img/' %}{{ product.url }}" alt="{{ product.name }}" class="product-image" style="width: 100px; height: 100px;">
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <p><strong>Fiyat:</strong> {{ product.price }} TL</p>
-          </div>
-        </div>
+         <div class="col-sm-2">
+            <div class="product-card">
+                {% comment %} <img src="https://via.placeholder.com/250" alt="Ürün Resmi"> {% endcomment %}
+                <img src="{% static 'shop/img/' %}{{ product.url }}" alt="{{ product.name }}" class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;">
+                {% comment %} <div class="product-title">{{ product.name }}</div> {% endcomment %}
+                <div class="product-description">{{ product.description }}</div>
+                <div class="product-price">₺{{ product.price }} </div>
+                <a href="#" class="btn-cart">Sepete Ekle</a>
+            </div>
+        </div>  
         {% endfor %}
       </div>
     </div>

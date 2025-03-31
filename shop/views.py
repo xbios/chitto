@@ -8,9 +8,9 @@ from django.template import TemplateDoesNotExist
 db = { 
     "urunliste" : [
         {             
-            "name": "javascript kursu", 
-            "description": "javascript kurs açıklaması", 
-            "url": "1.jpg",
+            "name": "KRT Chitto Açık Elekli Kedi Tuvaleti", 
+            "description": "KRT Chitto Açık Elekli Kedi Tuvaleti Turuncu", 
+            "url": "tur1.png",
             "slug": "javascript-kursu",
             "price": 100,
             "date": datetime.now(),
@@ -20,7 +20,7 @@ db = {
         {             
             "name": "python kursu", 
             "description": "python kurs açıklaması", 
-            "url": "2.jpg",
+            "url": "tuv1.jpeg",
             "slug": "python-kursu",
             "price": 110,
             "date": date(2025, 9, 10),
@@ -30,16 +30,17 @@ db = {
         {             
             "name": "web geliştirme kursu", 
             "description": "web geliştirme kurs açıklaması", 
-            "url": "3.jpg",
+            "url": "ev1.jpeg",
             "slug": "web-gelistirme-kursu",
             "price": 120,
             "date": date(2025, 8, 10),
             "isActive": True,
             "isUpdated": True
         },
-             {       "name": "javascript kursu", 
+             {       
+            "name": "javascript kursu", 
             "description": "javascript kurs açıklaması", 
-            "url": "1.jpg",
+            "url": "ev2.jpeg",
             "slug": "javascript-kursu",
             "price": 100,
             "date": datetime.now(),
@@ -49,7 +50,7 @@ db = {
         {             
             "name": "python kursu", 
             "description": "python kurs açıklaması", 
-            "url": "2.jpg",
+            "url": "ev3.jpeg",
             "slug": "python-kursu",
             "price": 110,
             "date": date(2025, 9, 10),
@@ -59,7 +60,27 @@ db = {
         {             
             "name": "web geliştirme kursu", 
             "description": "web geliştirme kurs açıklaması", 
-            "url": "3.jpg",
+            "url": "ev4.jpeg",
+            "slug": "web-gelistirme-kursu",
+            "price": 120,
+            "date": date(2025, 8, 10),
+            "isActive": True,
+            "isUpdated": True
+        },
+        {             
+            "name": "python kursu", 
+            "description": "python kurs açıklaması", 
+            "url": "paspas1.jpeg",
+            "slug": "python-kursu",
+            "price": 110,
+            "date": date(2025, 9, 10),
+            "isActive": True,
+            "isUpdated": False
+        },
+        {             
+            "name": "web geliştirme kursu", 
+            "description": "web geliştirme kurs açıklaması", 
+            "url": "paspas2.jpeg",
             "slug": "web-gelistirme-kursu",
             "price": 120,
             "date": date(2025, 8, 10),
