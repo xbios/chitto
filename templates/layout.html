@@ -1,183 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chittoshop | Toptan ve Perakende Satış</title>
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    {% block css_file %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chittoshop Petshop | Toptan ve Perakende Satış</title>
-  <!-- Bootstrap 3.3.7 CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  {% block css_file %}{% endblock %}
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      padding-top: 70px;
-    }
+    {% endblock %}
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        padding-top: 70px;
+      }
+      
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 22px;
+      }
+      
+      .jumbotron {
+        background-color: #f8f8f8;
+        margin-bottom: 0;
+        padding: 25px 0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .jumbotron h1 {
+        font-weight: bold;
+        color: #337ab7;
+        margin-bottom: 20px;
+      }
+      
+      .jumbotron p {
+        font-size: 21px;
+        margin-bottom: 30px;
+      }
+      
+      .contact-info {
+        background-color: #337ab7;
+        color: white;
+        padding: 40px 0;
+      }
+      
+      .contact-info h3 {
+        border-bottom: 1px solid #fff;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      
+      .contact-info i {
+        margin-right: 10px;
+      }
+      
+      .contact-info p {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      
+      .main-image {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .coming-soon {
+        background-color: #f8f8f8;
+        padding: 60px 0;
+        text-align: center;
+      }
+      
+      .coming-soon h2 {
+        color: #337ab7;
+        margin-bottom: 20px;
+      }
+      
+      footer {
+        background-color: #222;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      
+      .row {
+        margin-bottom: 10px; /* Satır arası boşluk */
+      }
+      .product-card {
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 10px;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 350px; /* Sabit yükseklik */
+        overflow: hidden; /* Taşan içeriği gizle */
+      }
+      .product-card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .product-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .product-description {
+        font-size: 14px;
+        color: #666;
+        margin: 10px 0;
+        flex-grow: 1; /* Açıklamayı esnek hale getir */
+      }
+      .product-price {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgb(233, 165, 110);
+        margin-bottom: 7px;
+        font-family: 'Tahoma', sans-serif;
+      }
+      .btn-cart {
+        background-color: #ff5733;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: auto; /* Butonu aşağıya sabitle */
+      }
+      .btn-cart:hover {
+        background-color: #e64c2e;
+      }
+      .btn-favorite2 {
+        position: absolute;
+        background-color: transparent;
+        border: 1px solid #ddd;
+        color: rgb(233, 165, 110);
+        padding: 5px 10px;
+        border-radius: 50%; /* Yuvarlak hale getir */
+        text-decoration: none;
+        display: inline-block;
+        top: 5px;
+        right: 5px;
+      }
+    </style>
+  </head>
 
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 22px;
-    }
-
-    .jumbotron {
-      background-color: #f8f8f8;
-      margin-bottom: 0;
-      padding: 25px 0;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .jumbotron h1 {
-      font-weight: bold;
-      color: #337ab7;
-      margin-bottom: 20px;
-    }
-
-    .jumbotron p {
-      font-size: 21px;
-      margin-bottom: 30px;
-    }
-
-    .contact-info {
-      background-color: #337ab7;
-      color: white;
-      padding: 40px 0;
-    }
-
-    .contact-info h3 {
-      border-bottom: 1px solid #fff;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    .contact-info i {
-      margin-right: 10px;
-    }
-
-    .contact-info p {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    .main-image {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .coming-soon {
-      background-color: #f8f8f8;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .coming-soon h2 {
-      color: #337ab7;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    
-    {% comment %} shop {% endcomment %}
-    .row {
-            margin-bottom: 10px; /* Satır arası boşluk */
-        }
-        .product-card {
-            background-color: #f7f7f7;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 5px;
-            text-align: center;
-            transition: all 0.3s ease-in-out;
-            margin-bottom: 10px;
-            min-height: 100%; 
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .product-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .product-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .product-description {
-            font-size: 14px;
-            color: #666;
-            margin: 10px 0;
-            flex-grow: 1; /* Açıklamayı esnek hale getir */
-        }
-        .product-price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #27ae60;
-            margin-bottom: 10px;
-        }
-        .btn-cart {
-            background-color: #ff5733;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: auto; /* Butonu aşağıya sabitle */
-        }
-        .btn-cart:hover {
-            background-color: #e64c2e;
-        }
-  </style>
-</head>
-
-<body>
-
+  <body>
     <!-- Navbar content -->
-     {% include "partials/_nav.html" %}
-    
-    <!-- Main content -->
-    {% block content %}{% endblock %}
+    {% include 'partials/_nav.html' %}
 
-  <!-- İletişim Bilgileri -->
-  <div class="contact-info">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h3>Adreslerimiz</h3>
-          <p><i class="glyphicon glyphicon-map-marker"></i> Merkez Şube: Arapzade mahallesi Santral yolu caddesi numara
-            26 / A <br> Orhangazi Bursa</p>
-          <p><i class="glyphicon glyphicon-map-marker"></i> Şube: Kükürtlü mahallesi Emir Abdülkadir caddesi no
-            9/3 <br> Osmangazi Bursa</p>
-        </div>
-        <div class="col-md-6">
-          <h3>İletişim Bilgileri</h3>
-          <p><i class="glyphicon glyphicon-phone"></i> Telefon 1: <span>+90 (533) 273 83 40</span></p>
-          <p><i class="glyphicon glyphicon-phone"></i> Telefon 2: <span>+90 (542) 774 19 89</span></p>
-          <p><i class="glyphicon glyphicon-envelope"></i> E-posta: info@chittoshop.com</p>
+    <!-- Main content -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- İletişim Bilgileri -->
+    <div class="contact-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Adreslerimiz</h3>
+            <p>
+              <i class="glyphicon glyphicon-map-marker"></i> Merkez Şube: Arapzade mahallesi Santral yolu caddesi numara 26 / A <br /> Orhangazi Bursa
+            </p>
+            <p>
+              <i class="glyphicon glyphicon-map-marker"></i> Şube: Kükürtlü mahallesi Emir Abdülkadir caddesi no 9/3 <br /> Osmangazi Bursa
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3>İletişim Bilgileri</h3>
+            <p>
+              <i class="glyphicon glyphicon-phone"></i> Telefon 1: <span>+90 (533) 273 83 40</span>
+            </p>
+            <p>
+              <i class="glyphicon glyphicon-phone"></i> Telefon 2: <span>+90 (542) 774 19 89</span>
+            </p>
+            <p>
+              <i class="glyphicon glyphicon-envelope"></i> E-posta: info@chittoshop.com
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>    
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Chittoshop Petshop. Tüm hakları saklıdır.</p>
-    </div>
-  </footer>    
-    
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Chittoshop Petshop. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+
     <!-- jQuery ve Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    {% block js_files %}{% endblock %}
-</body>
+    {% block js_files %}
+
+    {% endblock %}
+  </body>
 </html>
