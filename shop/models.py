@@ -1,17 +1,22 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 class Product(models.Model):
-    name = models.CharField(max_length=255) # Ürün adı 
-    description = models.TextField() # Ürün açıklaması
-    url = models.CharField(max_length=255) # Ürün resmi
-    slug = models.SlugField(max_length=255) # Ürün slug'ı
-    price = models.DecimalField(max_digits=10, decimal_places=2) # Ürün fiyatı
-    date = models.DateField() # Ürün tarihi
-    isActive = models.BooleanField(default=True) # Ürün aktif mi?
-    isUpdated = models.BooleanField(default=False) # Ürün güncellendi mi
-    uploaded_image = models.FileField(blank=True,upload_to='uploads2/') # Ürün resmi yükleme alanı
-    # category = models.ForeignKey('Category',blank=True,default="",on_delete=models.CASCADE) # Ürün kategorisi
+    name = models.CharField(max_length=255) 
+    description = models.TextField() 
+    url = models.CharField(max_length=255) 
+    slug = models.SlugField(default="",blank=True, editable=False, null=False, unique=True, db_index=True) 
+    price = models.DecimalField(max_digits=10, decimal_places=2) 
+    date = models.DateField() 
+    isActive = models.BooleanField(default=True) 
+    isUpdated = models.BooleanField(default=False) 
+    uploaded_image = models.FileField(blank=True,upload_to='uploads2/') 
+    # category = models.ForeignKey('Category',blank=True,default="",on_delete=models.CASCADE) 
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(args,kwargs)
 
     def __str__(self):
         return f"{self.name} -  {self.price} TL"
@@ -20,6 +25,10 @@ class Product(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=40)
     slug = models.CharField(max_length=50)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(args,kwargs)
 
     def __str__(self):
         return f"{self.name}"    
