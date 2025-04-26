@@ -2,7 +2,8 @@ from django import forms
 from django.contrib import admin
 from .models import Product, Category, Document
 
-
+admin.site.site_header = "Chitto Shop Admin"
+admin.site.site_title = "Chitto Shop Admin Portal"
 
 # class DocumentForm(forms.ModelForm):
 #     class Meta:
@@ -19,9 +20,9 @@ from .models import Product, Category, Document
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):        
     list_display = ('name', 'date', 'price', 'isActive', 'isUpdated') 
-    list_display_links = ('name', 'date')   
-    readonly_fields = ('slug',)
-    list_filter = ('name','isActive', 'isUpdated')   
+    list_display_links = ('name', 'date')
+    readonly_fields = ('slug','url')
+    list_filter = ('category','isActive', 'isUpdated')
     list_editable = ('isActive',)
     search_fields = ('name', 'description')
 
