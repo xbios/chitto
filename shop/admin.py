@@ -21,7 +21,7 @@ admin.site.site_title = "Chitto Shop Admin Portal"
 class ProductAdmin(admin.ModelAdmin):        
     list_display = ('name', 'date', 'price', 'isActive', 'isUpdated') 
     list_display_links = ('name', 'date')
-    readonly_fields = ('slug','url')
+    readonly_fields = ('image_tag', 'image_tag2','image_tag3','slug','url')
     list_filter = ('category','isActive', 'isUpdated')
     list_editable = ('isActive',)
     search_fields = ('name', 'description')
