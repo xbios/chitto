@@ -23,3 +23,4 @@ from shop.models import Product
 Product.objects.get(pk=2)
 Product.objects.get(pk=2).save()
 
+git pull origin main
