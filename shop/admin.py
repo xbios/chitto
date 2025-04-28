@@ -25,6 +25,24 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ('category','isActive', 'isUpdated')
     list_editable = ('isActive',)
     search_fields = ('name', 'description')
+    fieldsets = (
+        ('ürün ', {
+            'classes': ('wide',),  # 'wide' sınıfı alanları genişçe yayar
+            'fields': ('isActive','category','name', 'description','color','size','price'),  # Yan yana göstermek istediğiniz alanları buraya ekleyin
+        }),
+        ('Resim 1', {
+            'classes': ('wide',),  # 'wide' sınıfı alanları genişçe yayar
+            'fields': ('uploaded_image', 'image_tag'),  # Yan yana göstermek istediğiniz alanları buraya ekleyin
+        }),
+        ('Resim 2', {
+            'classes': ('wide'),  
+            'fields': ('uploaded_image2','image_tag2'),
+        }),
+        ('Resim 3', {
+            'classes': ('wide'),  
+            'fields': ('uploaded_image3','image_tag3'),
+        }),
+    )
 
 
 @admin.register(Category)
