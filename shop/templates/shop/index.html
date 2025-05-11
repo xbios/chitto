@@ -28,7 +28,7 @@
             <div class="product-card">
               {% comment %} <img src="https://via.placeholder.com/250" alt="Ürün Resmi" /> {% endcomment %}
               <div style="position: relative;">
-                <img src="{% static 'shop/img/' %}{{ product.url }}" alt="{{ product.name }}" class="card-img-top" style="margin: 0 auto;" />
+                <img src="/media/{{ product.uploaded_image }}" alt="{{ product.name }}" class="card-img-top" style="margin: 0 auto;" />
                 <a href="#" class="btn-favorite2"><span class="glyphicon glyphicon-heart-empty"></span></a>
               </div>
               {% comment %} <div class="product-title">{{ product.name }}</div> {% endcomment %}

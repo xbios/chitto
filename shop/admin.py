@@ -26,7 +26,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ('isActive',)
     search_fields = ('name', 'description')
     fieldsets = (
-        ('ürün ', {
+        ('ürün Bilgileri', {
             'classes': ('wide',),  # 'wide' sınıfı alanları genişçe yayar
             'fields': ('isActive','category','name', 'description','color','size','price'),  # Yan yana göstermek istediğiniz alanları buraya ekleyin
         }),

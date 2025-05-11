@@ -2,6 +2,8 @@ from datetime import date, datetime
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import TemplateDoesNotExist
+from.models import Product, Category
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
@@ -92,7 +94,9 @@ db = {
 }
 
 def index(request):
-    products = db["urunliste"]
+    products = Product.objects.all()  
+    #products = db["urunliste"]
+    #db["urunliste"]
     try:
         return render(request, 'shop/index.html',{         
         'products': products,
